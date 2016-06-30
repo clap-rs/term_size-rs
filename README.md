@@ -4,7 +4,8 @@ term_size
 [![Crates.io](https://img.shields.io/crates/v/term_size.svg)](https://crates.io/crates/term_size) [![Crates.io](https://img.shields.io/crates/d/term_size.svg)](https://crates.io/crates/term_size) [![license](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/kbknapp/term_size-rs/blob/master/LICENSE-MIT) [![license](http://img.shields.io/badge/license-Apache2.0-blue.svg)](https://github.com/kbknapp/term_size-rs/blob/master/LICENSE-APACHE) [![Coverage Status](https://coveralls.io/repos/kbknapp/term_size-rs/badge.svg?branch=master&service=github)](https://coveralls.io/github/kbknapp/term_size-rs?branch=master) [![Join the chat at https://gitter.im/kbknapp/term_size-rs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kbknapp/term_size-rs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Linux: [![Build Status](https://travis-ci.org/kbknapp/term_size-rs.svg?branch=master)](https://travis-ci.org/kbknapp/term_size-rs)
-Windows: [![Build status](https://ci.appveyor.com/api/projects/status/ejg8c33dn31nhv36/branch/master?svg=true)](https://ci.appveyor.com/project/kbknapp/term_size-rs/branch/master)
+Windows: [![Build status](https://ci.appveyor.com/api/projects/status/6q0x4h6i0e3ypbm5?svg=true
+)](https://ci.appveyor.com/project/kbknapp/term_size-rs/branch/master)
 
 A Rust library to enable getting terminal sizes and dimensions
 
@@ -25,7 +26,17 @@ Next, add this to your crate root:
 extern crate term_size;
 ```
 
-## license
+To get the dimensions of your terminal window, simply use the following:
+
+```rust
+fn main() {
+  if let Some((w, h)) = term_size::dimensions() {
+    println!("Width: {}\nHeight: {}", w, h);
+  } else {
+    println!("Unable to get term size :(")
+  }
+}
+```
 
 ## License
 
