@@ -9,7 +9,7 @@ Windows: [![Build status](https://ci.appveyor.com/api/projects/status/6q0x4h6i0e
 
 A Rust library to enable getting terminal sizes and dimensions
 
-[Documentation](http://kbknapp.github.io/term_size-rs)
+[Documentation](https://kbknapp.github.io/term_size-rs)
 
 ## Usage
 
