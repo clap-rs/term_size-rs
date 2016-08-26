@@ -40,6 +40,9 @@ static TIOCGWINSZ: c_ulong = 0x5413;
           target_os = "openbsd"))]
 static TIOCGWINSZ: c_ulong = 0x40087468;
 
+#[cfg(target_os = "solaris")]
+static TIOCGWINSZ: c_ulong = 0x5468;
+
 extern "C" {
 #[cfg(not(target_os = "windows"))]
     pub fn ioctl(fd: c_int, request: c_ulong, ...) -> c_int;
