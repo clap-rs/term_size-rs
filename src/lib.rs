@@ -12,7 +12,17 @@
 //! The size is needed when the user wants the output formatted into columns:
 //! the default grid view, or the hybrid grid-details view.
 
+#[cfg(not(target_os = "windows"))]
 extern crate libc;
+#[cfg(target_os = "windows")]
+extern crate kernel32;
+#[cfg(target_os = "windows")]
+extern crate winapi;
+
+#[cfg(target_os = "windows")]
+use kernel32::{GetConsoleScreenBufferInfo, GetStdHandle};
+#[cfg(target_os = "windows")]
+use winapi::{CONSOLE_SCREEN_BUFFER_INFO, COORD, SMALL_RECT, STD_OUTPUT_HANDLE};
 
 #[cfg(not(target_os = "windows"))]
 use std::mem::zeroed;
@@ -78,5 +88,29 @@ pub fn dimensions() -> Option<(usize, usize)> {
 
 #[cfg(target_os = "windows")]
 pub fn dimensions() -> Option<(usize, usize)> {
-    None
+        let null_coord = COORD{
+            X: 0,
+            Y: 0,
+        };
+        let null_smallrect = SMALL_RECT{
+            Left: 0,
+            Top: 0,
+            Right: 0,
+            Bottom: 0,
+        };
+
+        let stdout_h = unsafe { GetStdHandle(STD_OUTPUT_HANDLE) };
+        let mut console_data = CONSOLE_SCREEN_BUFFER_INFO{
+            dwSize: null_coord,
+            dwCursorPosition: null_coord,
+            wAttributes: 0,
+            srWindow: null_smallrect,
+            dwMaximumWindowSize: null_coord,
+        };
+
+        if unsafe { GetConsoleScreenBufferInfo(stdout_h, &mut console_data) } != 0 {
+            Some(((console_data.srWindow.Right - console_data.srWindow.Left) as usize, (console_data.srWindow.Bottom - console_data.srWindow.Top) as usize))
+        } else {
+            None
+        }
 }
