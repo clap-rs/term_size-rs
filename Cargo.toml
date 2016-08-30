@@ -11,8 +11,14 @@ license = "MIT/Apache-2.0"
 keywords = ["term", "terminal", "size", "width", "dimension"]
 
 [dependencies]
-libc      = "~0.2.9"
-clippy    = { version = "~0.0.74", optional = true }
+clippy = { version = "~0.0.74", optional = true }
+
+[target.'cfg(not(target_os = "windows"))'.dependencies]
+libc = "~0.2.9"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+kernel32-sys = "~0.2.2"
+winapi = "~0.2.8"
 
 [features]
 default     = []
