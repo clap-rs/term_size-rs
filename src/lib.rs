@@ -27,15 +27,7 @@ use winapi::{CONSOLE_SCREEN_BUFFER_INFO, COORD, SMALL_RECT, STD_OUTPUT_HANDLE};
 #[cfg(not(target_os = "windows"))]
 use std::mem::zeroed;
 #[cfg(not(target_os = "windows"))]
-use libc::{STDOUT_FILENO, c_int, c_ulong, c_ushort};
-
-/// The number of rows and columns of a terminal.
-#[cfg(not(target_os = "windows"))]
-#[repr(C)]
-struct Winsize {
-    ws_row: c_ushort,
-    ws_col: c_ushort,
-}
+use libc::{STDOUT_FILENO, c_int, c_ulong, winsize};
 
 // Unfortunately the actual command is not standardised...
 #[cfg(any(target_os = "linux", target_os = "android"))]
@@ -62,8 +54,8 @@ extern "C" {
 /// there is an error. (0, 0) is an invalid size to have anyway, which is why
 /// it can be used as a nil value.
 #[cfg(not(target_os = "windows"))]
-unsafe fn get_dimensions() -> Winsize {
-    let mut window: Winsize = zeroed();
+unsafe fn get_dimensions() -> winsize {
+    let mut window: winsize = zeroed();
     let result = ioctl(STDOUT_FILENO, TIOCGWINSZ, &mut window);
 
     if result == -1 {
