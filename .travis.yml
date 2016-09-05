@@ -2,10 +2,9 @@ sudo: false
 language: rust
 rust:
   - nightly
-  - nightly-2016-06-05
+  - nightly-2016-09-04
   - beta
   - stable
-# Only while clippy is failing
 matrix:
     allow_failures:
         - rust: nightly
@@ -18,8 +17,7 @@ script:
     cargo build --verbose &&
     cargo test --verbose &&
     travis-cargo --only nightly build &&
-    travis-cargo --only nightly bench &&
-    travis-cargo --only stable doc
+    travis-cargo --only nightly bench
 addons:
   apt:
     packages:
@@ -28,7 +26,6 @@ addons:
     - libdw-dev
 after_success:
   - |
-    travis-cargo --only stable doc-upload &&
     travis-cargo --only stable coveralls --no-sudo
 env:
   global:

@@ -1,3 +1,13 @@
+<a name="v0.2.1"></a>
+### v0.2.1 (2016-09-05)
+
+
+#### Bug Fixes
+
+*   uses libc::winsize instead of homegrown ([216986ec](https://github.com/kbknapp/term_size-rs/commit/216986ecdbe528523953a1cde4cf6c329a0f4fbc), closes [#6](https://github.com/kbknapp/term_size-rs/issues/6))
+
+
+
 
 <a name="v0.2.0">v0.2.0</a>
 ## v0.2.0 (2016-09-05)
