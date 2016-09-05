@@ -1,6 +1,15 @@
-<a name=""></a>
-##  (2016-06-30)
 
+<a name="v0.2.0">v0.2.0</a>
+## v0.2.0 (2016-09-05)
 
+#### Features
+
+* adds support for Windows ([f181c99](https://github.com/kbknapp/term_size-rs/commit/f181c99c0c306b711952a2a4053df904e851413f))
+
+#### Documentation
+
+* **README.md:**
+  *  fixes documentation link ([ca06bf13](https://github.com/kbknapp/term_size-rs/commit/ca06bf132948559032853addd9aa0af022a126e9))
+  *  minor fixups ([1c269046](https://github.com/kbknapp/term_size-rs/commit/1c2690462b1b1db58d46395c6f1cf098dd769e18))
 
 
