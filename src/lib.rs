@@ -47,7 +47,7 @@ static TIOCGWINSZ: c_ulong = 0x5468;
 
 extern "C" {
 #[cfg(not(target_os = "windows"))]
-    pub fn ioctl(fd: c_int, request: c_ulong, ...) -> c_int;
+    fn ioctl(fd: c_int, request: c_ulong, ...) -> c_int;
 }
 
 /// Runs the ioctl command. Returns (0, 0) if output is not to a terminal, or
