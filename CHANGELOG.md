@@ -1,3 +1,8 @@
+<a name="v0.2.2"></a>
+### v0.2.2 (2017-01-29)
+
+* Updates deps `libc` and `clippy`
+
 <a name="v0.2.1"></a>
 ### v0.2.1 (2016-09-05)
 
