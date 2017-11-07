@@ -9,6 +9,11 @@ documentation = "https://kbknapp.github.io/term_size-rs"
 readme = "README.md"
 license = "MIT/Apache-2.0"
 keywords = ["term", "terminal", "size", "width", "dimension"]
+categories = ["command-line-interface"]
+
+[badges]
+travis-ci = {repository = "kbknapp/term_size-rs"}
+appveyor = {repository = "kbknapp/term_size-rs"}
 
 [dependencies]
 clippy = { version = "~0.0.112", optional = true }
