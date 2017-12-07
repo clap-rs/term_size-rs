@@ -1,11 +1,11 @@
 [package]
 name = "term_size"
-version = "0.3.1"
+version = "1.0.0-beta1"
 authors = ["Kevin K. <kbknapp@gmail.com>", "Benjamin Sago <ogham@bsago.me>"]
 exclude = []
 description = "functions for determining terminal sizes and dimensions"
 repository = "https://github.com/kbknapp/term_size-rs.git"
-documentation = "https://kbknapp.github.io/term_size-rs"
+documentation = "https://docs.rs/term_size/"
 readme = "README.md"
 license = "MIT/Apache-2.0"
 keywords = ["term", "terminal", "size", "width", "dimension"]
@@ -16,14 +16,14 @@ travis-ci = {repository = "kbknapp/term_size-rs"}
 appveyor = {repository = "kbknapp/term_size-rs"}
 
 [dependencies]
-clippy = { version = "~0.0.112", optional = true }
+clippy = { version = "0.0.175", optional = true }
 
 [target.'cfg(not(target_os = "windows"))'.dependencies]
-libc = "~0.2.20"
+libc = "0.2.20"
 
 [target.'cfg(target_os = "windows")'.dependencies]
-kernel32-sys = "~0.2.2"
-winapi = "~0.2.8"
+kernel32-sys = "0.2.2"
+winapi = "0.2.8"
 
 [features]
 default     = []
