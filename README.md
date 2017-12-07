@@ -9,7 +9,7 @@ Windows: [![Build status](https://ci.appveyor.com/api/projects/status/6q0x4h6i0e
 
 A Rust library to enable getting terminal sizes and dimensions
 
-[Documentation](https://kbknapp.github.io/term_size-rs)
+[Documentation](https://docs.rs/term_size-rs)
 
 ## Usage
 
@@ -47,7 +47,7 @@ Licensed under either of
 * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
 * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
-at your option.
+at your option. Unless specifically stated otherwise, all contributions will be licensed in the same manner.
 
 ## Contributing
 
