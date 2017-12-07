@@ -86,7 +86,22 @@ unsafe fn get_dimensions_err() -> winsize {
 /// that order, in the attempt to dtermine terminal width. If one of those streams is actually
 /// a tty, this function returns its width and height as a number of characters.
 ///
+/// # Errors
+/// 
 /// If *all* of the streams are not ttys or return any errors this function will return `None`.
+/// 
+/// # Example
+/// 
+/// To get the dimensions of your terminal window, simply use the following:
+/// 
+/// ```no_run
+/// # use term_size;
+/// if let Some((w, h)) = term_size::dimensions() {
+///     println!("Width: {}\nHeight: {}", w, h);
+/// } else {
+///     println!("Unable to get term size :(")
+/// }
+/// ```
 pub fn dimensions() -> Option<(usize, usize)> {
     let w = unsafe { get_dimensions_any() };
 
@@ -101,7 +116,22 @@ pub fn dimensions() -> Option<(usize, usize)> {
 /// terminal width. If that streams is actually a tty, this function returns its width
 /// and height as a number of characters.
 ///
-/// If *all* of the streams are not ttys or return any errors this function will return `None`.
+/// # Errors
+/// 
+/// If the stream is not a tty or return any errors this function will return `None`.
+/// 
+/// # Example
+/// 
+/// To get the dimensions of your terminal window, simply use the following:
+/// 
+/// ```no_run
+/// # use term_size;
+/// if let Some((w, h)) = term_size::dimensions_stdout() {
+///     println!("Width: {}\nHeight: {}", w, h);
+/// } else {
+///     println!("Unable to get term size :(")
+/// }
+/// ```
 pub fn dimensions_stdout() -> Option<(usize, usize)> {
     let w = unsafe { get_dimensions_out() };
 
@@ -116,7 +146,22 @@ pub fn dimensions_stdout() -> Option<(usize, usize)> {
 /// terminal width. If that streams is actually a tty, this function returns its width
 /// and height as a number of characters.
 ///
-/// If *all* of the streams are not ttys or return any errors this function will return `None`.
+/// # Errors
+/// 
+/// If the stream is not a tty or return any errors this function will return `None`.
+/// 
+/// # Example
+/// 
+/// To get the dimensions of your terminal window, simply use the following:
+/// 
+/// ```no_run
+/// # use term_size;
+/// if let Some((w, h)) = term_size::dimensions_stdin() {
+///     println!("Width: {}\nHeight: {}", w, h);
+/// } else {
+///     println!("Unable to get term size :(")
+/// }
+/// ```
 pub fn dimensions_stdin() -> Option<(usize, usize)> {
     let w = unsafe { get_dimensions_in() };
 
@@ -131,7 +176,22 @@ pub fn dimensions_stdin() -> Option<(usize, usize)> {
 /// terminal width. If that streams is actually a tty, this function returns its width
 /// and height as a number of characters.
 ///
-/// If *all* of the streams are not ttys or return any errors this function will return `None`.
+/// # Errors
+/// 
+/// If the stream is not a tty or return any errors this function will return `None`.
+/// 
+/// # Example
+/// 
+/// To get the dimensions of your terminal window, simply use the following:
+/// 
+/// ```no_run
+/// # use term_size;
+/// if let Some((w, h)) = term_size::dimensions_stderr() {
+///     println!("Width: {}\nHeight: {}", w, h);
+/// } else {
+///     println!("Unable to get term size :(")
+/// }
+/// ```
 pub fn dimensions_stderr() -> Option<(usize, usize)> {
     let w = unsafe { get_dimensions_err() };
 

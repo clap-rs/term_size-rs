@@ -3,7 +3,24 @@ use kernel32::{GetConsoleScreenBufferInfo, GetStdHandle};
 use winapi::{CONSOLE_SCREEN_BUFFER_INFO, COORD, SMALL_RECT, STD_OUTPUT_HANDLE};
 
 /// Query the current processes's output, returning its width and height as a
-/// number of characters. Returns `None` if the output isn't to a terminal.
+/// number of characters. 
+///
+/// # Errors
+/// 
+/// Returns `None` if the output isn't to a terminal.
+/// 
+/// # Example
+/// 
+/// To get the dimensions of your terminal window, simply use the following:
+/// 
+/// ```no_run
+/// # use term_size;
+/// if let Some((w, h)) = term_size::dimensions() {
+///     println!("Width: {}\nHeight: {}", w, h);
+/// } else {
+///     println!("Unable to get term size :(")
+/// }
+/// ```
 pub fn dimensions() -> Option<(usize, usize)> {
     let null_coord = COORD { X: 0, Y: 0 };
     let null_smallrect = SMALL_RECT {
@@ -29,10 +46,40 @@ pub fn dimensions() -> Option<(usize, usize)> {
         None
     }
 }
+
 /// Query the current processes's output, returning its width and height as a
 /// number of characters. Returns `None` if the output isn't to a terminal.
+///
+/// # Errors
+/// 
+/// Returns `None` if the output isn't to a terminal.
+/// 
+/// # Example
+/// 
+/// To get the dimensions of your terminal window, simply use the following:
+/// 
+/// ```no_run
+/// # use term_size;
+/// if let Some((w, h)) = term_size::dimensions() {
+///     println!("Width: {}\nHeight: {}", w, h);
+/// } else {
+///     println!("Unable to get term size :(")
+/// }
+/// ```
 pub fn dimensions_stdout() -> Option<(usize, usize)> { dimensions() }
+
 /// This isn't implemented for Windows
+/// 
+/// # Panics
+/// 
+/// This function `panic!`s unconditionally with the `unimplemented!`
+/// macro
 pub fn dimensions_stdin() -> Option<(usize, usize)> { unimplemented!() }
+
 /// This isn't implemented for Windows
+/// 
+/// # Panics
+/// 
+/// This function `panic!`s unconditionally with the `unimplemented!`
+/// macro
 pub fn dimensions_stderr() -> Option<(usize, usize)> { unimplemented!() }
