@@ -47,7 +47,10 @@ Licensed under either of
 * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
 * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
-at your option. Unless specifically stated otherwise, all contributions will be licensed in the same manner.
+at your option. Unless you explicitly state otherwise, any contribution intentionally
+submitted for inclusion in the work by you, as defined in the
+Apache-2.0 license, shall be dual licensed as above, without any
+additional terms or conditions.
 
 ## Contributing
 
@@ -57,7 +60,18 @@ at your option. Unless specifically stated otherwise, all contributions will be 
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-Unless you explicitly state otherwise, any contribution intentionally
-submitted for inclusion in the work by you, as defined in the
-Apache-2.0 license, shall be dual licensed as above, without any
-additional terms or conditions.
+## Minimum Version of Rust
+
+`term_size` will officially support current stable Rust, minus two releases, but may work with prior releases as well. For example, current stable Rust at the time of this writing is 1.22.1, meaning `term_size` is guaranteed to compile with 1.20.0 and newer.
+
+At the 1.23.0 stable release, `term_size` will be guaranteed to compile with 1.21.0 and newer, etc.
+
+Upon bumping the minimum version of Rust (assuming it's within the stable-2 range), it must be clearly annotated in the [`CHANGELOG.md`](./CHANGELOG.md)
+
+## Breaking Changes
+
+`term_size` takes a similar policy to Rust and will bump the major version number upon breaking changes with only the following exceptions:
+
+* The breaking change is to fix a security concern
+* The breaking change is to be fixing a bug (i.e. relying on a bug as a feature)
+* The breaking change is a feature isn't used in the wild, or all users of said feature have given approval prior to the change
