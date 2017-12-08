@@ -17,7 +17,7 @@ First, add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-term_size = "0.3"
+term_size = "1"
 ```
 
 Next, add this to your crate root:
