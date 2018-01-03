@@ -1,6 +1,7 @@
-
-use kernel32::{GetConsoleScreenBufferInfo, GetStdHandle};
-use winapi::{CONSOLE_SCREEN_BUFFER_INFO, COORD, SMALL_RECT, STD_OUTPUT_HANDLE};
+use winapi::um::processenv::GetStdHandle;
+use winapi::um::winbase::STD_OUTPUT_HANDLE;
+use winapi::um::wincon::GetConsoleScreenBufferInfo;
+use winapi::um::wincon::{CONSOLE_SCREEN_BUFFER_INFO, COORD, SMALL_RECT};
 
 /// Query the current processes's output, returning its width and height as a
 /// number of characters. 

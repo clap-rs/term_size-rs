@@ -49,8 +49,6 @@
 #[cfg(not(target_os = "windows"))]
 extern crate libc;
 #[cfg(target_os = "windows")]
-extern crate kernel32;
-#[cfg(target_os = "windows")]
 extern crate winapi;
 
 // A facade to allow exposing functions depending on the platform
