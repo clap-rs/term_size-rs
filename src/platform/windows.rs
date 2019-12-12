@@ -41,8 +41,8 @@ pub fn dimensions() -> Option<(usize, usize)> {
     };
 
     if unsafe { GetConsoleScreenBufferInfo(stdout_h, &mut console_data) } != 0 {
-        Some(((console_data.srWindow.Right - console_data.srWindow.Left) as usize,
-                (console_data.srWindow.Bottom - console_data.srWindow.Top) as usize))
+        Some(((console_data.srWindow.Right - console_data.srWindow.Left + 1) as usize,
+                (console_data.srWindow.Bottom - console_data.srWindow.Top + 1) as usize))
     } else {
         None
     }
