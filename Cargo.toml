@@ -2,6 +2,7 @@
 name = "term_size"
 version = "0.3.2"
 authors = ["Kevin K. <kbknapp@gmail.com>", "Benjamin Sago <ogham@bsago.me>"]
+edition = "2018"
 exclude = ["/.clog.toml", "/.travis.yml", "/appveyor.yml", "/index.html", "/justfile"]
 description = "functions for determining terminal sizes and dimensions"
 repository = "https://github.com/kbknapp/term_size-rs.git"

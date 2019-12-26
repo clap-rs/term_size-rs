@@ -46,11 +46,6 @@
 )]
 #![cfg_attr(not(feature = "nightly"), forbid(unstable_features))]
 
-#[cfg(not(target_os = "windows"))]
-extern crate libc;
-#[cfg(target_os = "windows")]
-extern crate winapi;
-
 // A facade to allow exposing functions depending on the platform
 mod platform;
-pub use platform::{dimensions, dimensions_stderr, dimensions_stdin, dimensions_stdout};
+pub use crate::platform::{dimensions, dimensions_stderr, dimensions_stdin, dimensions_stdout};
