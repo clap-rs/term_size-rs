@@ -7,7 +7,7 @@
 //
 // at your option. Unless specifically stated otherwise, all contributions will be licensed in the same manner.
 
-// The following was originally taken and adapated from exa source
+// The following was originally taken and adapted from exa source
 // repo: https://github.com/ogham/exa
 // commit: b9eb364823d0d4f9085eb220233c704a13d0f611
 // license: MIT - Copyright (c) 2014 Benjamin Sago
@@ -44,7 +44,6 @@
     unused_qualifications,
     trivial_numeric_casts
 )]
-#![cfg_attr(not(feature = "nightly"), forbid(unstable_features))]
 
 // A facade to allow exposing functions depending on the platform
 mod platform;

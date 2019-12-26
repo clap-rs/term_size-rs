@@ -25,10 +25,6 @@ winapi = { version = "0.3", features = ["wincon", "processenv", "winbase"] }
 
 [features]
 default     = []
-nightly     = [] # for building with nightly and unstable features
-unstable    = [] # for building with unstable features on stable Rust
-debug       = [] # for building with debug messages
-travis      = ["nightly"] # for building with travis-cargo
 
 [profile.release]
 opt-level = 3
