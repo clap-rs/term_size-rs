@@ -83,7 +83,7 @@ unsafe fn get_dimensions_err() -> winsize {
 }
 
 /// Query the current processes's output (`stdout`), input (`stdin`), and error (`stderr`) in
-/// that order, in the attempt to dtermine terminal width. If one of those streams is actually
+/// that order, in the attempt to determine terminal width. If one of those streams is actually
 /// a tty, this function returns its width and height as a number of characters.
 ///
 /// # Errors
@@ -112,8 +112,8 @@ pub fn dimensions() -> Option<(usize, usize)> {
     }
 }
 
-/// Query the current processes's output (`stdout`) *only*, in the attempt to dtermine
-/// terminal width. If that streams is actually a tty, this function returns its width
+/// Query the current processes's output (`stdout`) *only*, in the attempt to determine
+/// terminal width. If that stream is actually a tty, this function returns its width
 /// and height as a number of characters.
 ///
 /// # Errors
@@ -142,8 +142,8 @@ pub fn dimensions_stdout() -> Option<(usize, usize)> {
     }
 }
 
-/// Query the current processes's input (`stdin`) *only*, in the attempt to dtermine
-/// terminal width. If that streams is actually a tty, this function returns its width
+/// Query the current processes's input (`stdin`) *only*, in the attempt to determine
+/// terminal width. If that stream is actually a tty, this function returns its width
 /// and height as a number of characters.
 ///
 /// # Errors
@@ -172,8 +172,8 @@ pub fn dimensions_stdin() -> Option<(usize, usize)> {
     }
 }
 
-/// Query the current processes's error output (`stderr`) *only*, in the attempt to dtermine
-/// terminal width. If that streams is actually a tty, this function returns its width
+/// Query the current processes's error output (`stderr`) *only*, in the attempt to determine
+/// terminal width. If that stream is actually a tty, this function returns its width
 /// and height as a number of characters.
 ///
 /// # Errors
