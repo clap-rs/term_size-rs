@@ -1,6 +1,6 @@
 [package]
 name = "term_size"
-version = "1.0.0-beta1"
+version = "0.3.2"
 authors = ["Kevin K. <kbknapp@gmail.com>", "Benjamin Sago <ogham@bsago.me>"]
 exclude = ["/.clog.toml", "/.travis.yml", "/appveyor.yml", "/index.html", "/justfile"]
 description = "functions for determining terminal sizes and dimensions"
