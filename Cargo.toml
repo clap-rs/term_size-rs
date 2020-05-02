@@ -62,11 +62,3 @@ debug = false
 rpath = false
 lto = true
 debug-assertions = false
-
-[profile.doc]
-opt-level = 0
-debug = true
-rpath = false
-lto = false
-debug-assertions = true
-codegen-units = 4
