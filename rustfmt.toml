@@ -1,4 +1,4 @@
-format_strings = false
-chain_overflow_last = false
-same_line_if_else = true
-fn_single_line = true
+edition = "2018"
+merge_derives = false
+use_small_heuristics = "Max"
+max_width = 120
