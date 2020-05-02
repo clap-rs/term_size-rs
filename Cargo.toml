@@ -2,12 +2,13 @@
 name = "term_size"
 version = "0.3.2"
 authors = ["Kevin K. <kbknapp@gmail.com>", "Benjamin Sago <ogham@bsago.me>"]
+edition = "2018"
 exclude = ["/.clog.toml", "/.travis.yml", "/appveyor.yml", "/index.html", "/justfile"]
 description = "functions for determining terminal sizes and dimensions"
 repository = "https://github.com/kbknapp/term_size-rs.git"
 documentation = "https://docs.rs/term_size/"
 readme = "README.md"
-license = "MIT/Apache-2.0"
+license = "MIT OR Apache-2.0"
 keywords = ["term", "terminal", "size", "width", "dimension"]
 categories = ["command-line-interface"]
 
@@ -24,10 +25,6 @@ winapi = { version = "0.3", features = ["wincon", "processenv", "winbase"] }
 
 [features]
 default     = []
-nightly     = [] # for building with nightly and unstable features
-unstable    = [] # for building with unstable features on stable Rust
-debug       = [] # for building with debug messages
-travis      = ["nightly"] # for building with travis-cargo
 
 [profile.release]
 opt-level = 3
