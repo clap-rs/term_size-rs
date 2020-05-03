@@ -1,6 +1,6 @@
 [package]
 name = "term_size"
-version = "0.3.2"
+version = "1.0.0-beta.2"
 authors = ["Kevin K. <kbknapp@gmail.com>", "Benjamin Sago <ogham@bsago.me>"]
 edition = "2018"
 exclude = ["/.clog.toml", "/.travis.yml", "/appveyor.yml", "/index.html", "/justfile"]
