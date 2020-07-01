@@ -11,6 +11,13 @@ A Rust library to enable getting terminal sizes and dimensions
 
 [Documentation](https://docs.rs/term_size)
 
+> # Maintenance status 
+>
+> **This crate is no longer maintained**. It works fine, but the maintainers don't have time and willingness 
+> to work on it or review future PRs anymore.
+>
+> Consider using [`terminal_size`](https://github.com/eminence/terminal-size/) instead.
+
 ## Usage
 
 First, add the following to your `Cargo.toml`:
